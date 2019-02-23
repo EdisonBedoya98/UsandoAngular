@@ -1,0 +1,21 @@
+<h1 class="container  text-dark text-center my-4 py-4">ngIf show= {{show}}</h1>
+
+<button class="btn btn-warning" (click)="show=!show">Acción</button>
+<button class="btn btn-dark mb-3" (click)="activo='primero'">primero</button>
+<p class="text-info d-none" *ngIf="show; else elseBlock" [ngClass]="{'d-block':activo=='primero'}">
+  Usando d-none en el class que sirve para ocultar el texto y con [ngClass]
+  d-block nos sirve para mostrar el texto Many of our components require the use of JavaScript to function.
+  Specifically, they require jQuery, Popper.js, and our own JavaScript
+  plugins. Place the following near the end of your pages,
+  right before the closing tag, to enable them. jQuery must
+  come first, then Popper.js, and then our JavaScript plugins.
+
+</p>
+<ng-template #elseBlock>
+  <p class="text-danger">
+    Curious which components explicitly require jQuery,
+    our JS, and Popper.js? Click the show components link below.
+    If you’re at all unsure about the general page structure, keep
+    reading for an example page template.
+  </p>
+</ng-template>
